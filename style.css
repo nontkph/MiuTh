@@ -60,12 +60,11 @@ body {
 
 .Object-1:hover {
     transform: scale(1.05);
-    background-color: rgba(18, 18, 19, 0.1);
+    background-color: rgba(18, 18, 19, 0.5);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
     border: 1px solid #ffffff;
 }
 
-/* Media Section */
 .media {
     display: block;
     background-color: #12141f;
@@ -74,8 +73,27 @@ body {
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
-    box-shadow: 0 0px 500px rgb(3, 3, 3, .6);
+    box-shadow: 0 0px 500px rgba(3, 3, 3, 0.6);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.35s ease-out, opacity 0.35s ease-out;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    .media.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .media.near-exit {
+        opacity: 0.5; 
+        transform: translateY(5px); 
+
+    }
+}
+
 
 /* Content Section 2 */
 .Content_2 {
@@ -144,6 +162,30 @@ body {
 }
 
 .Button_1:active {
+    transform: scale(0.8);
+}
+
+/* Button 2 */
+.Button_2 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #9ffff2;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Button_2:hover {
+    background-color: #91ffb6;
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    box-shadow: 0 0px 15px rgb(82, 250, 119);
+}
+
+.Button_2:active {
     transform: scale(0.8);
 }
 
