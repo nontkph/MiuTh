@@ -1,18 +1,12 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
-const data = [
+export const Data = [
     {
-        Name: "Data 1",
-        Picture: "",
-        Description: "this is description.",
-        Link: "",
+        name: "Data 1",
+        description: "Description for data 1",
+        link: "link1.html"
     },
     {
-        Name: "Data 2",
-        Picture: "",
-        Description: "this is description.",
-        Link: "",
+        name: "Data 2",
+        description: "Description for data 2",
+        link: "link2.html"
     }
 ];
-
-// สำหรับใช้งานที่อื่นๆ ใน JavaScript
-export default data;
