@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icons/Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>MiuTh</title>
+</head>
+
+<body>
+    <div class="Top">
+        <h1 class="Text-1">MiuTh</h1>
+        <button class="Button_1" id="Profile">Profile</button>
+        <button class="Button_1" id="Project">Project</button>
+        <button class="Button_1" id="Commission">Commission</button>
+        <button class="Button_1" id="FreeAsset">Free Asset</button>
+
+        <script>
+            // Button Actions
+            document.getElementById("Profile").addEventListener("click", function () {
+                window.location.href = "index.html";
+            });
+            document.getElementById("Project").addEventListener("click", function () {
+                window.location.href = "Project.html";
+            });
+            document.getElementById("Commission").addEventListener("click", function () {
+                window.location.href = "index.html";
+            });
+            document.getElementById("FreeAsset").addEventListener("click", function () {
+                alert("ยังไม่เสร็จสิ้น กดทำอะไรเลย");
+            });
+        </script>
+
+    </div>
+
+    <div class="Content_1">
+        <h1 class="WhiteText Text-1">My Project Game</h1>
+    </div>
+
+    <div class="GridColum" id="itemGrid"></div>
+    <template id="itemTemplate">
+        <div class="Object-1">
+            <h2 class="WhiteText">Item Name</h2>
+            <p class="WhiteText">Item Description</p>
+            <small class="WhiteText" style="opacity: 0.2;" > Type : Gui </small>
+            <br><br>
+            <button class="Button_1">Add to Cart</button>
+        </div>
+    </template>
+
+    <script>
+        const Items = [
+            { name: "Ui - Interface", description: "Various works related to the game ui and works that are beautiful and make the game look professional.", data: "A", path: "ui - interface.js" },
+        ];
+
+        const itemGrid = document.getElementById("itemGrid");
+        Items.forEach(item => {
+            const template = document.getElementById("itemTemplate");
+            const clone = template.content.cloneNode(true);
+            
+           console.log(`object/${item.path}`)
+
+            clone.querySelector(".WhiteText").textContent = item.name;
+            clone.querySelector(".WhiteText").nextElementSibling.textContent = item.description;
+            clone.querySelector(".WhiteText").nextElementSibling.nextElementSibling.textContent = `Total Amount : ${item.data}`;
+
+            itemGrid.appendChild(clone);
+        });
+    </script>
+
+</body>
+
+</html>
