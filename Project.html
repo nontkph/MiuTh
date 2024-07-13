@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1040664292770459679/1261696412551479378/Logo.png?ex=6693e5d9&is=66929459&hm=8043578d210d2f99b80a95a2f5e3cb8bcb245da9fd1725a0e6e23fa518b077ae&">
-        <link rel="stylesheet" , href="style">
-
-        <title>MiuTh</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1040664292770459679/1261696412551479378/Logo.png?ex=6693e5d9&is=66929459&hm=8043578d210d2f99b80a95a2f5e3cb8bcb245da9fd1725a0e6e23fa518b077ae&">
+    <link rel="stylesheet" href="style.css">
+    <title>MiuTh</title>
+</head>
 
 <body>
     <div class="Top">
@@ -21,20 +19,19 @@
 
         <script>
             // Button Actions
-                document.getElementById("Profile").addEventListener("click", function () {
-                    window.location.href = "https://miu-th.vercel.app/";
-                });
-                document.getElementById("Project").addEventListener("click", function () {
-                    window.location.href = "Project.html";
-                });
-                document.getElementById("Commission").addEventListener("click", function () {
-                    window.location.href = "https://miu-th.vercel.app/";
-                });
-                document.getElementById("Free Asset").addEventListener("click", function () {
-                    alert("ยังไม่เสร็จไอ้สัส กดทำเหี้ยอะไร");
-                });
+            document.getElementById("Profile").addEventListener("click", function () {
+                window.location.href = "https://miu-th.vercel.app/";
+            });
+            document.getElementById("Project").addEventListener("click", function () {
+                window.location.href = "Project.html";
+            });
+            document.getElementById("Commission").addEventListener("click", function () {
+                window.location.href = "https://miu-th.vercel.app/";
+            });
+            document.getElementById("FreeAsset").addEventListener("click", function () {
+                alert("ยังไม่เสร็จไอ้สัส กดทำเหี้ยอะไร");
+            });
         </script>
-
     </div>
 
     <div class="Content_1">
@@ -46,7 +43,7 @@
         <div class="Object-1">
             <h2 class="WhiteText">Item Name</h2>
             <p class="WhiteText">Item Description</p>
-            <small class="WhiteText" style="opacity: 0.2;" > Type : Gui </small>
+            <small class="WhiteText" style="opacity: 0.2;"> Type : Gui </small>
             <br><br>
             <button class="Button_1">Add to Cart</button>
         </div>
@@ -58,15 +55,14 @@
         ];
 
         const itemGrid = document.getElementById("itemGrid");
+        const template = document.getElementById("itemTemplate");
+
         Items.forEach(item => {
-            const template = document.getElementById("itemTemplate");
             const clone = template.content.cloneNode(true);
             
-           console.log(`object/${item.path}`)
-
-            clone.querySelector(".WhiteText").textContent = item.name;
-            clone.querySelector(".WhiteText").nextElementSibling.textContent = item.description;
-            clone.querySelector(".WhiteText").nextElementSibling.nextElementSibling.textContent = `Total Amount : ${item.data}`;
+            clone.querySelector("h2.WhiteText").textContent = item.name;
+            clone.querySelector("p.WhiteText").textContent = item.description;
+            clone.querySelector("small.WhiteText").textContent = `Total Amount : ${item.data}`;
 
             itemGrid.appendChild(clone);
         });
