@@ -1,0 +1,202 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+body {
+    background-color: rgb(8, 12, 19);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding-top: 60px;
+}
+
+/* Top Bar */
+.Top {
+    background-color: rgba(5, 9, 14, 0.1);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 5px 50px rgba(190, 200, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+/* Content Section 1 */
+.Content_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Grid Layout */
+.GridColum {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px; 
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    margin: 5%;
+}
+
+/* Object Styles */
+.Object-1 {
+    display: block;
+    background-color: #13141b;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px;
+    padding:10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform .3s ease, box-shadow .5s ease;
+}
+
+.Object-1:hover {
+    transform: scale(1.05);
+    background-color: rgba(18, 18, 19, 0.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    border: 1px solid #ffffff;
+}
+
+/* Media Section */
+.media {
+    display: block;
+    background-color: #12141f;
+    overflow: hidden;
+    width: 80%;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 0px 500px rgb(3, 3, 3, .6);
+}
+
+/* Content Section 2 */
+.Content_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Text Styles */
+.Text-1 {
+    color: white;
+    margin-right: auto;
+    font-size: 35px;
+    padding-left: 50px;
+    font-weight: bold;
+    text-shadow: 0 0px 35px rgba(168, 181, 255, 2);
+}
+
+.Text-Big {
+    color: white;
+    font-size: 40px;
+    white-space: nowrap;
+    font-weight: bold;
+    text-shadow: 0 0px 35px rgba(168, 181, 255, 0.5);
+}
+
+.Text-Sub {
+    color: rgb(219, 248, 255);
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* White Text */
+.WhiteText {
+    margin: 10px;
+    color: white;
+}
+
+/* Neon Effect */
+.Neon_1 {
+    filter: drop-shadow(0 0 5rem rgb(245, 98, 147));
+}
+
+/* Button Styles */
+.Button_1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Button_1:hover {
+    background-color: #cad2ff;
+    color: rgb(88, 88, 88);
+    transform: scale(1.1);
+    box-shadow: 0 0px 15px rgba(155, 162, 255, 1);
+}
+
+.Button_1:active {
+    transform: scale(0.8);
+}
+
+/* Animation */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.LoopUpDown {
+    animation: moveUpDown 3s ease-in-out infinite;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(5, 9, 14);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #212535;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #354768;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .GridColum {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .Text-1 {
+        font-size: 25px;
+    }
+
+    .Button_1 {
+        font-size: 14px;
+    }
+}
