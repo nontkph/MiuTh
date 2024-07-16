@@ -1,4 +1,4 @@
-import { Items } from './object/Project.js'
+import { Items } from "./object/Project.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const itemGrid = document.getElementById("itemGrid");

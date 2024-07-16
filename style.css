@@ -1,8 +1,10 @@
-/* Global Styles */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Global Styles */
 body {
     background-color: rgb(8, 12, 19);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding-top: 60px;
 }
@@ -20,60 +22,55 @@ body {
     box-shadow: 0 5px 50px rgba(190, 200, 255, 0.1);
     backdrop-filter: blur(5px);
     z-index: 1000;
+    padding: 10px 20px;
 }
 
-/* Content Section 1 */
-.Content_1 {
+/* Content Sections */
+.Content_1, .Content_2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 2rem;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 /* Grid Layout */
 .GridColum {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 5px; 
+    gap: 15px;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     width: 90%;
     margin: 5%;
 }
 
 /* Object Styles */
-.Object-1 {
-    display: block;
-    background-color: #13141b;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 10px;
-    padding:10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform .3s ease, box-shadow .5s ease;
-}
-
-.Object-1:hover {
-    transform: scale(1.05);
-    background-color: rgba(18, 18, 19, 0.5);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
-    border: 1px solid #ffffff;
-}
-
-.media {
-    display: block;
+.Object-1, .media {
     background-color: #12141f;
     overflow: hidden;
-    width: 80%;
     border-radius: 10px;
     margin: 10px;
     padding: 15px;
-    box-shadow: 0 0px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+.Object-1 {
+    width: 250px;
+    height: 210px;
+}
+
+.Object-1:hover, .Button_1:hover, .Button_2:hover, .Button_3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive Media Visibility */
+.media {
     opacity: 0;
     transform: translateY(50px);
     transition: transform 0.35s ease-out, opacity 0.35s ease-out;
@@ -84,25 +81,11 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
 
-@media (prefers-reduced-motion: no-preference) {
     .media.near-exit {
-        opacity: 0.5; 
-        transform: translateY(5px); 
-
+        opacity: 0.5;
+        transform: translateY(5px);
     }
-}
-
-/* Content Section 2 */
-.Content_2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
 }
 
 /* Text Styles */
@@ -112,7 +95,7 @@ body {
     font-size: 35px;
     padding-left: 50px;
     font-weight: bold;
-    text-shadow: 0 0px 35px rgba(168, 181, 255, 2);
+    text-shadow: 0 0 35px rgba(168, 181, 255, 0.2);
 }
 
 .Text-Big {
@@ -120,19 +103,15 @@ body {
     font-size: 40px;
     white-space: nowrap;
     font-weight: bold;
-    text-shadow: 0 0px 35px rgba(168, 181, 255, 0.5);
+    text-shadow: 0 0 35px rgba(168, 181, 255, 0.5);
 }
 
-.Text-Sub {
+.Text-Sub, .WhiteText {
     color: rgb(219, 248, 255);
-    font-size: 15px;
-    white-space: nowrap;
 }
 
-/* White Text */
 .WhiteText {
     margin: 10px;
-    color: white;
 }
 
 /* Neon Effect */
@@ -141,88 +120,60 @@ body {
 }
 
 /* Button Styles */
-.Button_1 {
+.Button_1, .Button_2, .Button_3 {
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    background-color: #f5f5f5;
-    color: #333;
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Button_1 {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.Button_2 {
+    background-color: #9ffff2;
+    color: #000;
+}
+
+.Button_3 {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 20px;
 }
 
 .Button_1:hover {
     background-color: #cad2ff;
-    color: rgb(88, 88, 88);
-    transform: scale(1.1);
-    box-shadow: 0 0px 15px rgba(155, 162, 255, 1);
-}
-
-.Button_1:active {
-    transform: scale(0.8);
-}
-
-/* Button 2 */
-.Button_2 {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 50px;
-    background-color: #9ffff2;
-    color: #000000;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #585858;
+    box-shadow: 0 0 15px rgba(155, 162, 255, 1);
 }
 
 .Button_2:hover {
     background-color: #91ffb6;
-    color: rgb(255, 255, 255);
-    transform: scale(1.1);
-    box-shadow: 0 0px 15px rgb(82, 250, 119);
-}
-
-.Button_2:active {
-    transform: scale(0.8);
-}
-
-/* Button 3 */
-.Button_3 {
-    padding: 5px 20px;
-    border: none;
-    border-radius: 50px;
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 15px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    box-shadow: 0 0 15px rgb(82, 250, 119);
 }
 
 .Button_3:hover {
-    transform: scale(1.05);
     background-color: #f5f5f5;
-    box-shadow: 0 0px 20px rgb(245, 98, 147, .5);
+    box-shadow: 0 0 20px rgba(245, 98, 147, 0.5);
 }
 
-.Button_3:active {
-    transform: scale(.9);
+.Button_1:active, .Button_2:active, .Button_3:active {
+    transform: scale(0.8);
 }
 
 /* Animation */
 @keyframes moveUpDown {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0);
     }
 }
 
@@ -243,7 +194,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #212535;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -258,9 +209,43 @@ body {
 
     .Text-1 {
         font-size: 25px;
+        padding-left: 20px;
     }
 
-    .Button_1 {
+    .Button_1, .Button_2, .Button_3 {
         font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .Top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Button_1, .Button_2, .Button_3 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .Content_1, .Content_2 {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .Top {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .Button_1, .Button_2, .Button_3 {
+        margin: 5px;
+    }
+
+    .Content_1, .Content_2 {
+        margin: 20px;
     }
 }
